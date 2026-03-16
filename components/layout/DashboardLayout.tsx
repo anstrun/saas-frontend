@@ -1,0 +1,25 @@
+'use client'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuthStore } from '@/store/auth.store'
+import { Sidebar } from './Sidebar'
+
+export function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
+  const { authed } = useAuthStore()
+
+  useEffect(() => {
+    if (!authed) router.replace('/login')
+  }, [authed, router])
+
+  if (!authed) return null
+
+  return (
+    <div className="flex h-screen overflow-hidden bg-[#09090B]">
+      <Sidebar />
+      <main className="flex-1 flex flex-col overflow-y-auto min-w-0">
+        {children}
+      </main>
+    </div>
+  )
+}
