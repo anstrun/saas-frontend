@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthStore } from '@/store/auth.store'
 import { Sidebar } from './Sidebar'
@@ -7,11 +7,17 @@ import { Sidebar } from './Sidebar'
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const { authed } = useAuthStore()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (!authed) router.replace('/login')
-  }, [authed, router])
+    setMounted(true)
+  }, [])
 
+  useEffect(() => {
+    if (mounted && !authed) router.replace('/login')
+  }, [mounted, authed, router])
+
+  if (!mounted) return null
   if (!authed) return null
 
   return (
