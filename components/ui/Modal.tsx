@@ -16,13 +16,13 @@ export function Modal({ open, onClose, title, description, children, size = 'md'
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/55 backdrop-blur-[3px] z-40 animate-fade-in" />
         <Dialog.Content className={cn(
-          'fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50',
+          'fixed left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 z-50',
           'w-[calc(100vw-2rem)]', widths[size],
           'bg-[#111113] border border-white/[0.08] rounded-xl',
           'shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.7)]',
-          'p-6 outline-none animate-fade-up'
+          'px-6 py-7 outline-none animate-fade-up'
         )}>
-          <div className="flex items-start justify-between mb-5">
+          <div className="flex items-start justify-between mb-6">
             <div>
               <Dialog.Title className="text-[15px] font-semibold text-[#FAFAFA] leading-snug">{title}</Dialog.Title>
               {description && <Dialog.Description className="text-sm text-[#71717A] mt-0.5">{description}</Dialog.Description>}
@@ -31,7 +31,9 @@ export function Modal({ open, onClose, title, description, children, size = 'md'
               <X className="w-4 h-4" />
             </button>
           </div>
-          {children}
+          <div className="mt-1">
+  {children}
+</div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
