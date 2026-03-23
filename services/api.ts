@@ -1,6 +1,6 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 
-const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3000/api/v1'
+const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3002/api/v1'
 
 // ── Token helpers (localStorage — SSR-safe) ───────────────────────────────────
 export const tok = {

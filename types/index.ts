@@ -12,9 +12,11 @@ export interface AuthUser {
   name?:         string
   role:          UserRole
   tenantId:      string
+  tenantName:    string
   plan:          Plan
   securityLevel: number
   sessionId:     string
+  branchId:     string
 }
 
 export interface AuthTokens {
