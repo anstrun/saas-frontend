@@ -5,7 +5,7 @@ import { useAuthStore } from '@/store/auth.store';
 import { authService } from '@/services/auth.service';
 import { tok } from '@/services/api';
 
-const INVOICES_URL = process.env.NEXT_PUBLIC_INVOICES_URL || 'https://facturacion.saas.com';
+const INVOICES_URL = process.env.NEXT_PUBLIC_INVOICES_URL || 'https://main.d2n0xc418in8nz.amplifyapp.com/';
 
 const getOrigin = (url: string) => {
   try {
