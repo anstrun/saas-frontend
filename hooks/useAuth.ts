@@ -15,7 +15,7 @@ export function useAuth() {
     try {
       const tokens = await authService.login(email, password)
       setUser(tokens.user, tokens.accessToken, tokens.refreshToken)
-      router.replace('/dashboard')
+      router.replace('/facturacion')
     } catch (e: any) {
       const msg = e?.response?.data?.message
       toast.error(Array.isArray(msg) ? msg[0] : msg ?? 'Credenciales inválidas')

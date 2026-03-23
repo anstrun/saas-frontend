@@ -1,17 +1,18 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Users2, MonitorSmartphone, Building2, ScrollText, LogOut, Hexagon } from 'lucide-react'
+import { LayoutDashboard, Users2, MonitorSmartphone, Building2, ScrollText, LogOut, Hexagon, Receipt } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/hooks/useAuth'
 import { Badge } from '@/components/ui/Badge'
 
 const NAV = [
-  { href: '/dashboard', label: 'Dashboard',     icon: LayoutDashboard },
-  { href: '/users',     label: 'Usuarios',       icon: Users2 },
-  { href: '/sessions',  label: 'Sesiones',        icon: MonitorSmartphone },
-  { href: '/tenants',   label: 'Organización',    icon: Building2 },
-  { href: '/audit',     label: 'Auditoría',       icon: ScrollText },
+  { href: '/facturacion', label: 'Facturación',   icon: Receipt },
+  { href: '/dashboard',    label: 'Dashboard',     icon: LayoutDashboard },
+  { href: '/users',        label: 'Usuarios',      icon: Users2 },
+  { href: '/sessions',     label: 'Sesiones',      icon: MonitorSmartphone },
+  { href: '/tenants',      label: 'Organización',  icon: Building2 },
+  { href: '/audit',        label: 'Auditoría',     icon: ScrollText },
 ]
 
 const planBadge: Record<string, 'blue' | 'amber' | 'green' | 'muted'> = {
